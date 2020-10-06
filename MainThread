@@ -1,0 +1,15 @@
+public class MainThread {
+
+	public static void main(String[] args) {
+
+		Carretera carretera1 = new Carretera("Carretera 1", new int[] { 1, 2, 3, 4, 5 });
+		Carretera carretera2 = new Carretera("Carretera 2", new int[] { 1, 2, 3, 4, 5 });
+
+		long initialTime = System.currentTimeMillis();
+		SemaforoThread semaforo1 = new SemaforoThread(1, carretera1, initialTime, true);
+		SemaforoThread semaforo2 = new SemaforoThread(2, carretera2, initialTime, false);
+
+		semaforo1.start();
+		semaforo2.start();
+	}
+} 
